@@ -16,6 +16,13 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
+        }
+        header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 50px;
         }
         .container {
             max-width: 1200px;
@@ -85,10 +92,35 @@
         .contact-info li {
             margin: 5px 0;
         }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form label {
+            margin: 10px 0 5px;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="logo.png" alt="Logo">
         <h1>Portafolio de Dast - Artista 3D</h1>
     </header>
     <div class="container">
@@ -101,8 +133,7 @@
             <div class="project-grid">
                 <div class="project-item">
                     <a href="#img1"><img src="project1.jpg" alt="Proyecto 1"></a>
-                    <div id="img1" class="overlay">
-                        <a href="#" class="close">&times;</a>
+                    <div id="img1" class="overlay" onclick="window.location='#'">
                         <img src="project1.jpg" alt="Proyecto 1">
                     </div>
                     <h3>Proyecto 1</h3>
@@ -110,8 +141,7 @@
                 </div>
                 <div class="project-item">
                     <a href="#img2"><img src="project2.jpg" alt="Proyecto 2"></a>
-                    <div id="img2" class="overlay">
-                        <a href="#" class="close">&times;</a>
+                    <div id="img2" class="overlay" onclick="window.location='#'">
                         <img src="project2.jpg" alt="Proyecto 2">
                     </div>
                     <h3>Proyecto 2</h3>
@@ -119,8 +149,7 @@
                 </div>
                 <div class="project-item">
                     <a href="#img3"><img src="project3.jpg" alt="Proyecto 3"></a>
-                    <div id="img3" class="overlay">
-                        <a href="#" class="close">&times;</a>
+                    <div id="img3" class="overlay" onclick="window.location='#'">
                         <img src="project3.jpg" alt="Proyecto 3">
                     </div>
                     <h3>Proyecto 3</h3>
@@ -135,6 +164,16 @@
                 <li>YouTube: <a href="https://www.youtube.com/channel/UCqxrwoDIpmwI4Ug99evoxyg" target="_blank">youtube.com/channel/UCqxrwoDIpmwI4Ug99evoxyg</a></li>
                 <li>Twitter: <a href="https://twitter.com/dast_45" target="_blank">@dast_45</a></li>
             </ul>
+            <h2>Envíame un Mensaje</h2>
+            <form class="contact-form" action="mailto:rafanavalon345@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
         </section>
     </div>
     <footer>
